@@ -39,6 +39,8 @@ load_raw.py → DuckDB (olist.duckdb)
       │
       ▼
 [dbt tests — 15 data quality checks]
+
+![Lineage Graph](docs/dag.png)
 ```
 
 ---
