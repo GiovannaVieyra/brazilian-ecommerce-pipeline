@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: fact_orders
+    description: "Tabla de hechos principal con métricas de ventas, logística y satisfacción"
+    columns:
+      - name: order_id
+        description: "PK — identificador único de la orden"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+
+      - name: order_status
+        tests:
+          - accepted_values:
+              values: ['delivered', 'shipped', 'canceled', 'unavailable', 
+                      'invoiced', 'processing', 'created', 'approved']
+      - name: payment_value
+        tests:
+          - not_null:
+              config:
+                severity: warn
+
+  - name: dim_customers
+    description: "Dimensión de clientes únicos"
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_state
+        tests:
+          - not_null
+
+  - name: dim_sellers
+    description: "Dimensión de vendedores"
+    columns:
+      - name: seller_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_products
+    description: "Dimensión de productos"
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null

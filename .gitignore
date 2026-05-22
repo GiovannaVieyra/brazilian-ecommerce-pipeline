@@ -1,0 +1,8 @@
+﻿olist.duckdb
+olist_duckdb
+data_raw/
+olist_pipeline/target/
+olist_pipeline/dbt_packages/
+__pycache__/
+*.pyc
+logs/
