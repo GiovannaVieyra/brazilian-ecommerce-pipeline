@@ -117,43 +117,6 @@ Brazilian E-Commerce Project/
 
 ---
 
-## 🚀 How to Run
-
-**Prerequisites:** Python 3.12+, dbt-duckdb
-
-**1. Clone the repo**
-```bash
-git clone https://github.com/your-username/brazilian-ecommerce-pipeline
-cd brazilian-ecommerce-pipeline
-```
-
-**2. Install dependencies**
-```bash
-pip install duckdb pandas dbt-duckdb
-```
-
-**3. Load raw data into DuckDB**
-```bash
-python ingestion/load_raw.py
-```
-
-**4. Run dbt transformations**
-```bash
-cd olist_pipeline
-dbt run
-```
-
-**5. Run data quality tests**
-```bash
-dbt test
-```
-
-**6. Generate and serve documentation**
-```bash
-dbt docs generate
-dbt docs serve
-```
-
 ---
 
 ## 🔍 Key Engineering Decisions
